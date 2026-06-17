@@ -1,0 +1,13 @@
+{
+  "mcpServers": {
+    "agentic-delivery-ledger": {
+      "command": "node_modules/.bin/tsx",
+      "args": ["packages/mcp/src/main.ts"],
+      "env": {
+        "ADL_DB": "./out/journey.jsonl"
+      },
+      "disabled": false,
+      "autoApprove": ["list_work_items", "claim_item", "update_status", "raise_need"]
+    }
+  }
+}

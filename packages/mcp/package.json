@@ -1,0 +1,17 @@
+{
+  "name": "@adl/mcp",
+  "version": "0.1.0",
+  "type": "module",
+  "main": "src/main.ts",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "start": "tsx src/main.ts",
+    "client-demo": "tsx src/client-demo.ts"
+  },
+  "dependencies": {
+    "@adl/core": "*",
+    "@adl/protocol": "*",
+    "@modelcontextprotocol/sdk": "^1.0.0",
+    "zod": "^3.23.8"
+  }
+}

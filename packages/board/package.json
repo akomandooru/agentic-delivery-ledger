@@ -1,0 +1,14 @@
+{
+  "name": "@adl/board",
+  "version": "0.1.0",
+  "type": "module",
+  "main": "src/server.ts",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "start": "tsx src/server.ts"
+  },
+  "dependencies": {
+    "@adl/core": "*",
+    "@adl/protocol": "*"
+  }
+}

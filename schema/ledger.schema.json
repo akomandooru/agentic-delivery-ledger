@@ -1,0 +1,247 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Agentic Delivery Ledger Protocol",
+  "x-protocolVersion": "0.1.0",
+  "description": "Generated from the Zod types in packages/protocol. Metadata only; no source code.",
+  "$defs": {
+    "WorkItem": {
+      "$ref": "#/definitions/WorkItem",
+      "definitions": {
+        "WorkItem": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string"
+            },
+            "type": {
+              "type": "string",
+              "enum": [
+                "intent",
+                "epic",
+                "feature",
+                "task"
+              ]
+            },
+            "parentId": {
+              "type": "string"
+            },
+            "title": {
+              "type": "string"
+            },
+            "purpose": {
+              "type": "string"
+            },
+            "boundaries": {
+              "type": "object",
+              "properties": {
+                "allow": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  },
+                  "default": []
+                },
+                "deny": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  },
+                  "default": []
+                }
+              },
+              "additionalProperties": false
+            },
+            "gates": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "satisfiedBy": {
+                    "type": "string",
+                    "enum": [
+                      "human",
+                      "automated"
+                    ]
+                  },
+                  "description": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "name",
+                  "satisfiedBy"
+                ],
+                "additionalProperties": false
+              }
+            },
+            "outcome": {
+              "type": "string"
+            },
+            "claimedState": {
+              "type": "string",
+              "enum": [
+                "candidate",
+                "clarifying",
+                "declared",
+                "proposed",
+                "in_progress",
+                "awaiting_validation",
+                "validated",
+                "in_production",
+                "stabilized"
+              ]
+            },
+            "verifiedState": {
+              "$ref": "#/definitions/WorkItem/properties/claimedState"
+            },
+            "flags": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "enum": [
+                  "claimed-not-verified",
+                  "out-of-bounds"
+                ]
+              },
+              "default": []
+            },
+            "createdAt": {
+              "type": "string"
+            },
+            "updatedAt": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "id",
+            "type",
+            "title",
+            "verifiedState",
+            "createdAt",
+            "updatedAt"
+          ],
+          "additionalProperties": false
+        }
+      }
+    },
+    "RecordEvent": {
+      "$ref": "#/definitions/RecordEvent",
+      "definitions": {
+        "RecordEvent": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string"
+            },
+            "kind": {
+              "type": "string",
+              "enum": [
+                "ItemDeclared",
+                "ClaimPosted",
+                "GroundTruthObserved",
+                "GateSatisfied",
+                "StateChanged"
+              ]
+            },
+            "itemId": {
+              "type": "string"
+            },
+            "at": {
+              "type": "string"
+            },
+            "actor": {
+              "type": "string"
+            },
+            "trustLevel": {
+              "type": "string",
+              "enum": [
+                "L0",
+                "L1",
+                "L2",
+                "L3",
+                "L4"
+              ],
+              "default": "L0"
+            },
+            "data": {
+              "type": "object",
+              "additionalProperties": {},
+              "default": {}
+            },
+            "prevHash": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "default": null
+            }
+          },
+          "required": [
+            "id",
+            "kind",
+            "itemId",
+            "at",
+            "actor"
+          ],
+          "additionalProperties": false
+        }
+      }
+    },
+    "Gate": {
+      "$ref": "#/definitions/Gate",
+      "definitions": {
+        "Gate": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "satisfiedBy": {
+              "type": "string",
+              "enum": [
+                "human",
+                "automated"
+              ]
+            },
+            "description": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "name",
+            "satisfiedBy"
+          ],
+          "additionalProperties": false
+        }
+      }
+    },
+    "Boundaries": {
+      "$ref": "#/definitions/Boundaries",
+      "definitions": {
+        "Boundaries": {
+          "type": "object",
+          "properties": {
+            "allow": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "default": []
+            },
+            "deny": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "default": []
+            }
+          },
+          "additionalProperties": false
+        }
+      }
+    }
+  }
+}

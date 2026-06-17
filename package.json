@@ -1,0 +1,35 @@
+{
+  "name": "agentic-delivery-ledger",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Verified system of record for agentic delivery (reference implementation)",
+  "license": "Apache-2.0",
+  "workspaces": [
+    "packages/protocol",
+    "packages/core",
+    "packages/mcp",
+    "packages/board"
+  ],
+  "scripts": {
+    "build": "npm run build --workspaces --if-present",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "demo": "tsx packages/core/src/demo/run.ts",
+    "e2e": "tsx packages/core/src/demo/e2e.ts",
+    "journey": "tsx packages/core/src/demo/journey.ts",
+    "retro": "tsx packages/core/src/demo/retro.ts",
+    "verify": "tsx packages/core/src/demo/verify.ts",
+    "schema": "tsx packages/protocol/scripts/gen-schema.ts"
+  },
+  "devDependencies": {
+    "@types/node": "^22.5.0",
+    "ts-node": "^10.9.2",
+    "tsx": "^4.22.4",
+    "typescript": "^5.5.4",
+    "vitest": "^2.0.5",
+    "zod-to-json-schema": "^3.25.2"
+  },
+  "dependencies": {
+    "zod": "^3.23.8"
+  }
+}
