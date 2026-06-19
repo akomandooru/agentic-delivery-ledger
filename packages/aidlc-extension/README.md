@@ -122,10 +122,10 @@ The full lifecycle, from a fresh project to reading the verified record:
    truth is observed from tools. The ledger is `aidlc-docs/ledger.jsonl`.
 7. **Read the verified record** with the report commands:
    ```bash
-   adlx report board              # claimed vs verified, with claimed-not-verified divergence
-   adlx report audit --intent <id> # the audit trail for an intent and its subtree
-   adlx report retro              # claim accuracy, cycle time, gate effectiveness
-   adlx verify                    # tamper-evidence: INTACT or BROKEN at a record index
+   npx adlx report board              # claimed vs verified, with claimed-not-verified divergence
+   npx adlx report audit --intent <id> # the audit trail for an intent and its subtree
+   npx adlx report retro              # claim accuracy, cycle time, gate effectiveness
+   npx adlx verify                    # tamper-evidence: INTACT or BROKEN at a record index
    ```
    The standalone ledger repo also has a visual web board you can point at the ledger file.
 
