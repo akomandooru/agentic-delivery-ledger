@@ -1,0 +1,29 @@
+{
+  "name": "@adl/aidlc-extension",
+  "version": "0.1.0",
+  "description": "adlx: the verification-ledger CLI and AI-DLC extension installer (tamper-evident, claimed-vs-verified system of record).",
+  "license": "Apache-2.0",
+  "type": "module",
+  "main": "dist/index.js",
+  "bin": {
+    "adlx": "dist/cli.js"
+  },
+  "files": [
+    "dist",
+    "dist-extension",
+    "README.md"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "build": "node ./scripts/build.mjs",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "prepack": "node ./scripts/build.mjs",
+    "adlx": "tsx src/cli.ts"
+  },
+  "devDependencies": {
+    "@adl/core": "*",
+    "@adl/protocol": "*"
+  }
+}

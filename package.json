@@ -8,7 +8,8 @@
     "packages/protocol",
     "packages/core",
     "packages/mcp",
-    "packages/board"
+    "packages/board",
+    "packages/aidlc-extension"
   ],
   "scripts": {
     "build": "npm run build --workspaces --if-present",
@@ -19,6 +20,7 @@
     "journey": "tsx packages/core/src/demo/journey.ts",
     "retro": "tsx packages/core/src/demo/retro.ts",
     "verify": "tsx packages/core/src/demo/verify.ts",
+    "adlx": "tsx packages/aidlc-extension/src/cli.ts",
     "schema": "tsx packages/protocol/scripts/gen-schema.ts"
   },
   "devDependencies": {

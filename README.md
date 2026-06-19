@@ -150,7 +150,13 @@ packages/
   core/      record store (event log), reconciliation engine, GitHub adapter, audit + retro/metrics
   mcp/       governance MCP server (agent claim interface; client-agnostic)
   board/     thin read-only board (zero-build HTTP view over the record)
+  aidlc-extension/  opt-in AI-DLC drop-in: the `adlx` writer, hooks, and rule pack (see its README)
 ```
+
+The **AI-DLC Verification Extension** (`packages/aidlc-extension`) applies this protocol to an
+[AI-DLC](https://github.com/awslabs/aidlc-workflows) run without forking or editing AI-DLC. For how
+to adopt and run it, see [`packages/aidlc-extension/README.md`](packages/aidlc-extension/README.md);
+for the why, see [`docs/ai-dlc-verification-extension.md`](docs/ai-dlc-verification-extension.md).
 
 ## Run it
 
