@@ -5,3 +5,6 @@ dist/
 *.sqlite-journal
 .DS_Store
 out/
+
+# npm pack output (release artifacts are attached to releases, not committed)
+*.tgz
